@@ -1,10 +1,10 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
 import { environment } from '../environments/environment';
 
-const MIN: number = 0;
-const MAX: number = 16777215;
-const HEX_BASE: number = 16;
-const MS_IN_S: number = 333;
+const MIN = 0;
+const MAX = 16777215;
+const HEX_BASE = 16;
+const MS_IN_S = 333;
 
 @Component({
     selector: 'app-root',
@@ -13,10 +13,10 @@ const MS_IN_S: number = 333;
 })
 export class AppComponent implements OnInit {
     private _bg: string;
-    constructor(private ref:ElementRef) {}
+    constructor(private ref: ElementRef) {}
     public ngOnInit(): void {
-        this.bg = "#FFFFFF";
-        setInterval(()=>this.bg=this.randomColor(),3*MS_IN_S);
+        this.bg = '#FFFFFF';
+        setInterval(() => this.bg = this.randomColor(), 3 * MS_IN_S);
     }
     public get bg(): string {
         return this._bg;
