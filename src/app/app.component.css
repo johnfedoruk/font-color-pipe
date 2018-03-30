@@ -8,6 +8,7 @@
     transition: 333ms linear color;
 }
 h1 {
+    cursor: pointer;
     position: absolute;
     top: 50vh;
     left: 50vw;
