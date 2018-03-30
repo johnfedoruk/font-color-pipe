@@ -1,0 +1,17 @@
+:host {
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    transition: 333ms ease background;
+}
+#font {
+    transition: 333ms ease color;
+}
+h1 {
+    position: absolute;
+    top: 50vh;
+    left: 50vw;
+    padding: 20px;
+    outline: 1px solid;
+    transform: translate(-50%,-50%);
+}
