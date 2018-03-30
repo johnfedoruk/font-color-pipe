@@ -3,7 +3,7 @@ import { Component, OnInit, ElementRef } from '@angular/core';
 const MIN: number = 0;
 const MAX: number = 16777215;
 const HEX_BASE: number = 16;
-const MS_IN_S: number = 1000;
+const MS_IN_S: number = 333;
 
 @Component({
     selector: 'app-root',

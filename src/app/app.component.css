@@ -2,10 +2,10 @@
     width: 100%;
     height: 100%;
     display: inline-block;
-    transition: 333ms ease background;
+    transition: 666ms linear background;
 }
 #font {
-    transition: 333ms ease color;
+    transition: 333ms linear color;
 }
 h1 {
     position: absolute;
