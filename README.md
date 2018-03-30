@@ -1,27 +1,77 @@
 # FontColorPipe
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.3.
+This project contains an [Angular](https://angular.io) pipe that can be used for calculating the best font to display over an arbitrary background. The pipe, FontColorPipe, is exported from the FontColorModule.
 
-## Development server
+## [Demo](https://johnfedoruk.github.io/font-color-pipe/index.html)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## NPM
 
-## Code scaffolding
+```bash
+npm install --save font-color-pipe
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Usage
 
-## Build
+```TypeScript
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { FontColorModule } from 'font-color-pipe';
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+import { AppComponent } from './app.component';
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+@NgModule({
+    declarations: [
+        AppComponent
+    ],
+    imports: [
+        BrowserModule,
+        FontColorModule
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
+})
+export class AppModule { }
+```
 
-## Running end-to-end tests
+> ./src/app/app/module.ts
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+```TypeScript
+import { Component, OnInit, ElementRef } from '@angular/core';
 
-## Further help
+const WHITE: string = "#FFFFFF";
+const BLACK: string = "#000000";
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+@Component({
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.css']
+})
+export class AppComponent implements OnInit {
+    public _bg: string = WHITE;
+    constructor(private ref:ElementRef) {}
+    public ngOnInit(): void {
+        setInterval(
+            () =>
+                this.bg = this.bg === BLACK ? WHITE : BLACK,
+                1000
+        );
+    }
+    public set bg(bg: string) {
+        this._bg = bg;
+        this.ref.nativeElement.style.backgroundColor = this.bg;
+    }
+    public get bg(): string {
+        return this._bg;
+    }
+}
+```
+
+> src/app/app.component.ts
+
+```html
+<h1 id="font" [ngStyle]="{'color':bg | fontColor}">Hello</h1>
+```
+
+> src/app/app.component.html
+
