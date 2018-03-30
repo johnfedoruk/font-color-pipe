@@ -9,7 +9,10 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "packagr": "ng-packagr -p ng-package.json -p ng-package.json"
+    "packagr": "ng-packagr -p ng-package.json -p ng-package.json",
+    "landing": "npm run build-landing && npm run deploy-landing",
+    "build-landing": "ng build --prod --aot --base-href https://johnfedoruk.github.io/font-color-pipe/",
+    "deploy-landing": "node node_modules/angular-cli-ghpages/bin/angular-cli-ghpages --no-silent"
   },
   "private": false,
   "dependencies": {},
