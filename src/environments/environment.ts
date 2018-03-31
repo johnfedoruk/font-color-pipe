@@ -5,5 +5,5 @@
 
 export const environment = {
     production: false,
-    github: "https://github.com/johnfedoruk/font-color-pipe"
+    github: 'https://github.com/johnfedoruk/font-color-pipe'
 };

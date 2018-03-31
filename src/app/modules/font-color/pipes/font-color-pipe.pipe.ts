@@ -6,7 +6,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class FontColorPipePipe implements PipeTransform {
 
     transform(color_hex: any): any {
-        if (color_hex === undefined || color_hex === null || color_hex.length < 7 || typeof(color_hex) !== "string" ) {
+        if (color_hex === undefined || color_hex === null || color_hex.length < 7 || typeof(color_hex) !== 'string' ) {
             return '#FFFFFF';
         }
         const R_HEX: string = color_hex.substr(1, 2);
