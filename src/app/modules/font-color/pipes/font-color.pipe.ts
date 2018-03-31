@@ -3,7 +3,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 @Pipe({
   name: 'fontColor'
 })
-export class FontColorPipePipe implements PipeTransform {
+export class FontColorPipe implements PipeTransform {
 
     transform(color_hex: any): any {
         if (color_hex === undefined || color_hex === null || color_hex.length < 7 || typeof(color_hex) !== 'string' ) {

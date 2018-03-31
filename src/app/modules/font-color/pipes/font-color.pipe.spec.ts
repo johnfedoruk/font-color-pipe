@@ -1,10 +1,10 @@
-import { FontColorPipePipe } from './font-color-pipe.pipe';
+import { FontColorPipe } from './font-color.pipe';
 
-let pipe: FontColorPipePipe;
+let pipe: FontColorPipe;
 
 describe('FontColorPipePipe', () => {
     beforeEach(() => {
-        pipe = new FontColorPipePipe();
+        pipe = new FontColorPipe();
     });
     describe('FontColorPipe', () => {
         it('create an instance', () => {
