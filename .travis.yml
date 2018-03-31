@@ -19,12 +19,14 @@ script:
   - npm run packagr
 
 before_deploy:
+  - cp package.json dist
   - cd dist
 
 deploy:
   provider: npm
   email: johnny@johnfedoruk.ca
   api_key: $NPM_TOKEN
+  skip_cleanup: true  
   on:
     branch: master
 
