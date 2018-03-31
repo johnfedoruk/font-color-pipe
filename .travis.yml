@@ -23,8 +23,7 @@ deploy:
   email: johnny@johnfedoruk.ca
   api_key: $NPM_TOKEN
   on:
-    - tags: true
-    - branch: master
+    branch: master
 
 notifications:
   email:
