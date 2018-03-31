@@ -1,5 +1,7 @@
 # FontColorPipe
 
+![Build Status](https://travis-ci.org/johnfedoruk/font-color-pipe.svg?branch=master)
+
 This project contains an [Angular](https://angular.io) pipe that can be used for calculating the best font to display over an arbitrary background. The pipe, FontColorPipe, is exported from the FontColorModule.
 
 ## [Demo](https://johnfedoruk.github.io/font-color-pipe/index.html)
