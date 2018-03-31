@@ -18,6 +18,9 @@ script:
   - ng test --browser PhantomJS --single-run=true --watch=false
   - npm run packagr
 
+before_deploy:
+  - cd dist
+
 deploy:
   provider: npm
   email: johnny@johnfedoruk.ca
